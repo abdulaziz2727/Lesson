@@ -1,0 +1,35 @@
+:root {
+  --headerColor:#000;
+  --fontColor:#fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  height: 6rem;
+  background-color: var(--headerColor);
+}
+.header .navbar {
+  width: 80%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header .navbar .list_group {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.header .navbar .list_group .list_item {
+  color: var(--fontColor);
+  list-style-type: none;
+}/*# sourceMappingURL=style.css.map */
