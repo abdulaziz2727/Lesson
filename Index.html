@@ -6,21 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body>
     <header class="header">
         <div class="navbar">
-            <ul class="list_group">
+            <div class="logo">
+                <img src="CSS/music.jpg">
+            </div>
+            <ul id="list" class="list_group">
                 <li class="list_item"><i class=""></i><span>Home</span></li>
                 <li class="list_item"><i class=""></i><span>Music</span></li>
                 <li class="list_item"><i class=""></i><span>Videos</span></li>
                 <li class="list_item"><i class=""></i><span>Albums</span></li>
                 <li class="list_item"><i class=""></i><span>About</span></li>
             </ul>
+            <div class="toggle">
+                <button id="btn"><i class="bi bi-list"></i></button>
+            </div>
         </div>
     </header>
     <section class="section_1">
-       
+       <div class="container">
+        <div class="corusel">
+            <div class="corusel_item">
+                <img class="images" src="https://i.pinimg.com/736x/18/bd/41/18bd4134927a899db79cb9ea64643838.jpg" alt="">
+            </div>
+            <div class="corusel_item">
+                <img class="images" src="https://i.ytimg.com/vi/h3VMXz-LsGs/maxresdefault.jpg" alt="">
+            </div>
+            <div class="corusel_item">
+                <img class="images" src="https://i.ytimg.com/vi/FAg8JZwFM2U/maxresdefault.jpg" alt="">
+            </div>
+            <div class="corusel_item">
+                <img class="images" src="https://uzpesni.ru/wp-content/uploads/2021/07/Munisa-Rizayeva-Moon-Band-Qaytmaydi-kech-mp3-image-1024x552.jpg" alt="">
+            </div>
+        </div>
+        <div class="left">
+            <button class="left_button"> < </button>
+        </div>
+        <div class="right">
+            <button class="right_button"> > </button>
+        </div>
+       </div>
     </section>
+    <script src="JS/js.js"></script>
 </body>
 </html>
