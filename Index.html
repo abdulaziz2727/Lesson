@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body>
+    <div id="vudeo_bg">
+        <video src="Media/Video/fon.mp4" controls muted></video>
+    </div>
+    <div id="loader">
+        <div class="loader_items">
+            <span class="loader_1"></span>
+            <span class="loader_2"></span>
+        </div>
+    </div>
     <header class="header">
         <div class="navbar">
             <div class="logo">
@@ -27,29 +36,31 @@
         </div>
     </header>
     <section class="section_1">
-       <div class="container">
-        <div class="corusel">
-            <div class="corusel_item">
-                <img class="images" src="https://i.pinimg.com/736x/18/bd/41/18bd4134927a899db79cb9ea64643838.jpg" alt="">
+        <div class="container">
+             <div class="slider">
+                <ul id="ul" class="Slide-Item">
+                     <li>
+                        <img src="https://i.pinimg.com/736x/18/bd/41/18bd4134927a899db79cb9ea64643838.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="https://i.ytimg.com/vi/nPd7t7rSD3w/maxresdefault.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="https://i.ytimg.com/vi/h3VMXz-LsGs/maxresdefault.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="https://i.ytimg.com/vi/ltZW_atZ2Hk/maxresdefault.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="https://i.ytimg.com/vi/65oprQt9Fyw/maxresdefault.jpg" alt="">
+                    </li>
+                </ul>
             </div>
-            <div class="corusel_item">
-                <img class="images" src="https://i.ytimg.com/vi/h3VMXz-LsGs/maxresdefault.jpg" alt="">
-            </div>
-            <div class="corusel_item">
-                <img class="images" src="https://i.ytimg.com/vi/FAg8JZwFM2U/maxresdefault.jpg" alt="">
-            </div>
-            <div class="corusel_item">
-                <img class="images" src="https://uzpesni.ru/wp-content/uploads/2021/07/Munisa-Rizayeva-Moon-Band-Qaytmaydi-kech-mp3-image-1024x552.jpg" alt="">
-            </div>
+            <button id="right" class="arrow right"><i class="bi bi-chevron-double-right"></i></button>
+            <button id="left" class="arrow left"><i class="bi bi-chevron-double-left"></i></button>
         </div>
-        <div class="left">
-            <button class="left_button"> < </button>
-        </div>
-        <div class="right">
-            <button class="right_button"> > </button>
-        </div>
-       </div>
     </section>
     <script src="JS/js.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </body>
 </html>
