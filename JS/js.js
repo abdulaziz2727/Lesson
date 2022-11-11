@@ -1,66 +1,282 @@
-let list =document.querySelector("#list");
-let button =document.querySelector("#btn");
-let left_button =document.querySelector("left_button");
-let right_button =document.querySelector("right_button");
-let img = document.querySelector("corusel_item");
-let corusel_item = document.querySelectorAll("corusel_item")
-let loader = document.querySelector("#loader")
-window.addEventListener("DOMContentLoaded" , async() =>{
-    await setTimeout(() =>{
-        loader.classList.add("loader");
-    }, 2000);
-    setTimeout(() => {
-        loader.style.display = "none"
-    }, 2500);
-});
+let list = document.querySelector("#list");
+let button = document.querySelector("#btn");
+let img = document.querySelector(".corusel_item");
+let left_btn = document.querySelector(".left_btn");
+let right_btn = document.querySelector(".right_btn");
+let corusel_item = document.querySelectorAll(".corusel_item");
+
 
 button.addEventListener("click" , ()=>{
-    if(list.classList[1]=="toggle_list"){
+    if(list.classList[1]==="toggle_list"){
         list.classList.remove("toggle_list")
     }else{
         list.classList.add("toggle_list")
     }
-    console.log(list.classList);
 })
 
 
-let ul = document.querySelector("#ul");
-let li = document.querySelectorAll("#ul li");
-let leftBtn = document.querySelector("#left");
-let rightBtn = document.querySelector("#right");
-let width = li[0].clientWidth;
-let score=0;
-console.dir(li[0]);
+let slider = document.querySelector('.slider');
+let ul = slider.querySelector('#ul');
+let li =document.querySelectorAll("#ul li");
+let leftBtn = document.querySelector('#left');
+let rightBtn = document.querySelector('#right');
+let score = 0;
+let width = li[0].clientWidth
 
-rightBtn.addEventListener("click" , () => {
-    if ((li.length - 2) * width + score < 0){
-        score = 0
-        ul.style.marginLeft = `${score}px`;
+
+
+leftBtn.addEventListener('click', ()=>{
+    if((li.length-2)*width+score<0){
+        score=0
+        ul.style.marginLeft=`${score}px`;
+    }else{
+        ul.style.marginLeft=`${score-=width}px`;
     }
-    else{
-        ul.style.marginLeft = `${(score -=width)}px`;
-    }
-    console.log(score);
+    
 });
-setInterval(() =>{
-    if ((li.length - 2) * width + score < 0){
-        score = 0
-        ul.style.marginLeft = `${score}px`;
+rightBtn.addEventListener('click', ()=>{
+    if((li.length-2)*width+score>0){
+        score=0
+        ul.style.marginLeft=`${score}px`;
+    }else{
+        ul.style.marginLeft=`${score+=width}px`;
     }
-    else{
-        ul.style.marginLeft = `${(score -=width)}px`;
-    }
-    console.log(score);
-},3000 )
-leftBtn.addEventListener("click" , () => {
-    if ((li.length - 2) * width + score > 0){
-        score = 0
-        ul.style.marginLeft = `${score}px`;
-    }
-    else{
-        ul.style.marginLeft = `${(score -=width)}px`;
-    }
-    console.log(score);
+    
 });
 
+/* TODO:
+  - ADD timer (currentTime and duration)
+*/
 
+const tracks = [
+  {
+    id: '1',
+    title: 'Ukulele',
+    artist: 'Bensound',
+    src: 'https://www.bensound.com/bensound-music/bensound-ukulele.mp3',
+    cover: 'https://www.bensound.com/bensound-img/ukulele.jpg'
+  },
+  {
+    id: '2',
+    title: 'Summer',
+    artist: 'Bensound',
+    src: 'https://www.bensound.com/bensound-music/bensound-summer.mp3',
+    cover: 'https://www.bensound.com/bensound-img/summer.jpg'
+  },
+  {
+    id: '3',
+    title: 'Happy Rock',
+    artist: 'Bensound',
+    src: 'https://www.bensound.com/bensound-music/bensound-happyrock.mp3',
+    cover: 'https://www.bensound.com/bensound-img/happyrock.jpg'
+  },
+  {
+    id: '4',
+    title: 'Jazzy Frenchy',
+    artist: 'Bensound',
+    src: 'https://www.bensound.com/bensound-music/bensound-jazzyfrenchy.mp3',
+    cover: 'https://www.bensound.com/bensound-img/jazzyfrenchy.jpg'
+  },
+  {
+    id: '5',
+    title: 'Acoustic Breeze',
+    artist: 'Bensound',
+    src: 'https://www.bensound.com/bensound-music/bensound-acousticbreeze.mp3',
+    cover: 'https://www.bensound.com/bensound-img/acousticbreeze.jpg'
+  },
+  {
+    id: '6',
+    title: 'Punky',
+    artist: 'Bensound',
+    src: 'https://www.bensound.com/bensound-music/bensound-punky.mp3',
+    cover: 'https://www.bensound.com/bensound-img/punky.jpg'
+  },
+  {
+    id: '7',
+    title: 'Badass',
+    artist: 'Bensound',
+    src: 'https://www.bensound.com/bensound-music/bensound-badass.mp3',
+    cover: 'https://www.bensound.com/bensound-img/badass.jpg'
+  },
+  {
+    id: '8',
+    title: 'Brazil Samba',
+    artist: 'Bensound',
+    src: 'https://www.bensound.com/bensound-music/bensound-brazilsamba.mp3',
+    cover: 'https://www.bensound.com/bensound-img/brazilsamba.jpg'
+  },
+  {
+    id: '9',
+    title: 'Creepy',
+    artist: 'Bensound',
+    src: 'https://www.bensound.com/bensound-music/bensound-creepy.mp3',
+    cover: 'https://www.bensound.com/bensound-img/creepy.jpg'
+  },
+  {
+    id: '10',
+    title: 'High Octane',
+    artist: 'Bensound',
+    src: 'https://www.bensound.com/bensound-music/bensound-highoctane.mp3',
+    cover: 'https://www.bensound.com/bensound-img/highoctane.jpg'
+  }
+];
+
+
+const player = document.querySelector('.player');
+
+
+const audio = player.querySelector('.player__audio');
+const audioSource = audio.querySelector('source');
+const songPanel = player.querySelector('.song-panel');
+const songTitle = player.querySelector('.song-info__title');
+const songArtist = player.querySelector('.song-info__artist');
+const backButton = player.querySelector('.backward');
+const playButton = player.querySelector('.play');
+const forwardButton = player.querySelector('.forward');
+const spinner = player.querySelector('.spinner');
+const spinnerDisc = player.querySelector('.spinner__disc');
+const progress = player.querySelector('.progress');
+const progressBar = player.querySelector('.progress__filled');
+
+let playing = false;
+let trackSwitch = false;
+
+const togglePlay = () => {
+  // Play / pause the audio
+  const method = audio.paused ? 'play' : 'pause';
+  playing = audio.paused ? true : false;
+  audio[method]();
+};
+
+const toggleSongPanel = () => {
+
+  if (!trackSwitch) {
+    // Scale the disc
+    spinnerDisc.classList.toggle('scale');
+
+    // Show / hide song panel
+    songPanel.classList.toggle('playing');
+
+    // Change button icon
+    playButton.classList.toggle('playing');
+  }
+};
+
+const startSpin = () => {
+  // Start spinning the disc
+  spinner.classList.add('spin');
+};
+
+const stopSpin = () => {
+  // Stop spinning the disc
+  const spin = document.querySelector('.spin');
+  spin.addEventListener("animationiteration", () => {
+    if (!playing) {
+      spin.style.animation = 'none';
+      spinner.classList.remove('spin');
+      spin.style.animation = '';
+    }
+  }, {
+    once: true
+  });
+};
+const handleProgress = () => {
+  // Update the progress bar.
+  const percent = (audio.currentTime / audio.duration) * 100;
+  progressBar.style.flexBasis = `${percent}%`;
+  // Skip to next track if at the end of the song.
+  if (percent === 100) {
+    trackSwitch = true;
+    handleForwardButton();
+  }
+};
+
+const handleBackButton = () => {
+  if (audio.currentTime <= 3) {
+    const currentTrackId = parseInt(audioSource.dataset.trackid);
+    const previousTrackId = currentTrackId === 1 ? '10' : (currentTrackId - 1).toString();
+    const previousTrack = tracks.find(o => o.id === previousTrackId);
+    changeTrack(previousTrack);
+  } else {
+    audio.currentTime = 0;
+  }
+};
+
+const handleForwardButton = () => {
+  const currentTrackId = parseInt(audioSource.dataset.trackid);
+  const nextTrackId = currentTrackId === 10 ? '1' : (currentTrackId + 1).toString();
+  const nextTrack = tracks.find(o => o.id === nextTrackId);
+  changeTrack(nextTrack);
+};
+
+const changeTrack = (track) => {
+  if (playing) trackSwitch = true;
+  audioSource.setAttribute('src', track.src);
+  audioSource.dataset.trackid = track.id;
+  songTitle.innerHTML = track.title;
+  songArtist.innerHTML = track.artist;
+  spinnerDisc.style.backgroundImage = `url(${track.cover})`;
+  audio.load();
+  if (playing) {
+    audio.addEventListener('canplay', () => {
+      audio.play();
+    }, {
+      once: true
+    });
+    audio.addEventListener('play', () => {
+      trackSwitch = false;
+    }, {
+      once: true
+    });
+  }
+};
+
+function scrub(e) {
+    const scrubTime = (e.offsetX / progress.offsetWidth) * audio.duration;
+    audio.currentTime = scrubTime;
+}
+
+audio.addEventListener('play', startSpin);
+audio.addEventListener('play', toggleSongPanel);
+audio.addEventListener('pause', stopSpin)
+audio.addEventListener('pause', toggleSongPanel);
+audio.addEventListener('timeupdate', handleProgress);
+
+backButton.addEventListener('click', handleBackButton);
+playButton.addEventListener('click', togglePlay);
+forwardButton.addEventListener('click', handleForwardButton);
+
+let mousedown = false;
+progress.addEventListener('click', scrub);
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+progress.addEventListener('mousedown', () => mousedown = true);
+progress.addEventListener('mouseup', () => mousedown = false);
+
+
+
+let youtube = [
+  `<iframe width="560" height="315" src="https://www.youtube.com/embed/V1Pl8CzNzCw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+  `<iframe width="560" height="315" src="https://www.youtube.com/embed/OErtsGyKXgU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+  `<iframe width="560" height="315" src="https://www.youtube.com/embed/XDR8_OEY7xE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+  `<iframe width="560" height="315" src="https://www.youtube.com/embed/S_xH7noaqTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+  `<iframe width="560" height="315" src="https://www.youtube.com/embed/S_xH7noaqTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+  `<iframe width="560" height="315" src="https://www.youtube.com/embed/VjYHGrZuhyI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+  `<iframe width="560" height="315" src="https://www.youtube.com/embed/VbfpW0pbvaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+];
+
+function createMenuItem(name) {
+  let div = document.createElement( 'div' );
+  div.classList.add( "content" );
+  div.innerHTML = name;
+  return div;
+}
+
+
+youtube.map( item => {
+  document.querySelector( "#row" ).appendChild(createMenuItem( item ))
+} )
+
+
+document.querySelector( ".close" ).addEventListener( "click", () => {
+  document.querySelector("#player").style.display="none"
+})
